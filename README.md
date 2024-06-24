@@ -200,38 +200,7 @@ dependencies {
 }
 ```
 
-## Flutter run key commands.
-
-- **r** - Hot **reload**. 🔥🔥🔥
-- **R** - Hot **restart**. ♻️♻️♻️
-- **c** - **Clear** the screen.
-- **v** - Open Flutter **DevTools**.
-- **h** - Repeat this **help** message.
-- **g** - Run source **code generators**.
-- **d** - Detach (terminate `flutter run` but leave application running).
-- **q** - Quit (terminate the application on the device).
-- **w** - Dump **widget hierarchy** to the console. (`debugDumpApp`)
-- **t** - Dump **rendering tree** to the console. (`debugDumpRenderTree`)
-- **L** - Dump **layer tree** to the console. (`debugDumpLayerTree`)
-- **S** - Dump **accessibility tree** in **traversal** order.
-  (`debugDumpSemantics`)
-- **U** - Dump **accessibility tree** in **inverse hit test** order.
-- **j** - Dump frame **raster stats** for the current frame. (Unsupported for
-  web)
-- **M** - Write **SkSL shaders** to a unique file in the project directory.
-- **p** - Toggle the display of **construction lines**.
-  (`debugPaintSizeEnabled`)
-- **i** - Toggle **widget inspector**.
-  (`WidgetsApp.showWidgetInspectorOverride`)
-- **P** - Toggle **performance overlay**. (`WidgetsApp.showPerformanceOverlay`)
-- **a** - Toggle **timeline events** for all widget build methods.
-  (`debugProfileWidgetBuilds`)
-- **I** - Toggle **oversized image** inversion. (`debugInvertOversizedImages`)
-- **b** - Toggle platform **brightness** (dark and light mode).
-  (`debugBrightnessOverride`)
-- **o** - Simulate different **operating systems**. (`defaultTargetPlatform`)
-
-[Checkout Bluetooth Connection Flow](./Resources/Connection.pdf)
+[Bluetooth Connection](./Resources/Connection.pdf)
 
 ## Screenshots
 

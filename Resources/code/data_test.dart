@@ -1,8 +1,6 @@
 // ignore_for_file: constant_identifier_names
 import 'dart:typed_data';
 
-import 'package:flutter/material.dart';
-
 /// Conversation of received data.
 void main() {
   const int CMD_GET_APP_VERSION = 107;
@@ -17,7 +15,7 @@ void main() {
   for (final List<int> data in dataList) {
     if (data[0] == RES_WEIGHT_MEAS) {
       // value 1 = weight measurement
-      debugPrint('Payload size: ${data[1]}');
+      print('Payload size: ${data[1]}');
       for (int x = 2; x < data.length; x += 8) {
         // Weight
         final Uint8List value =
@@ -29,22 +27,21 @@ void main() {
             Uint8List.fromList(data.getRange(x + 4, x + 4 + 4).toList());
         final int uSeconds =
             timestamp.buffer.asByteData().getUint32(0, Endian.little);
-        debugPrint('$weight Kg, ${uSeconds / 1000000.0} Sec.');
+        print('$weight Kg, ${uSeconds / 1000000.0} Sec.');
       }
     } else if (data[0] == RES_LOW_PWR_WARNING) {
-      debugPrint("Received low battery warning.");
+      print("Received low battery warning.");
     } else if (data[0] == RES_CMD_RESPONSE) {
       if (command == CMD_GET_APP_VERSION) {
-        debugPrint(
-            'FW v${String.fromCharCodes(data.getRange(2, data.length))}');
+        print('FW v${String.fromCharCodes(data.getRange(2, data.length))}');
       } else if (command == CMD_GET_BATTERY_VOLTAGE) {
         final Uint8List value =
             Uint8List.fromList(data.getRange(2, data.length).toList());
         final int voltage =
             value.buffer.asByteData().getUint32(0, Endian.little);
-        debugPrint('Battery voltage: {$voltage} [mV]');
+        print('Battery voltage: {$voltage} [mV]');
       } else if (command == CMD_GET_ERROR_INFORMATION) {
-        debugPrint(
+        print(
             'Crashlog: ${String.fromCharCodes(data.getRange(2, data.length))}');
       }
     }
